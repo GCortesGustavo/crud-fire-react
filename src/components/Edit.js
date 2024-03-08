@@ -4,12 +4,14 @@ import { getDoc, updateDoc, doc } from "firebase/firestore"
 import { db } from "../firebaseConfig/firebase"
 
 const Edit = () => {
+    //Estados
     const [ description, setDescription ] = useState('')
     const [ stock, setStock ] = useState(0)
 
     const navigate = useNavigate()    
     const {id} = useParams()
 
+    //Funcion para actualizar un producto
     const update = async (e) => {
         e.preventDefault()
         const product = doc(db, "products", id)
@@ -18,12 +20,14 @@ const Edit = () => {
         navigate('/')
     }
 
+
+    //Funcion para obtener un produtco por id
     const getProductById = async (id) => {
         const product = await getDoc( doc(db, "products", id) )
         if(product.exists()) {
             //console.log(product.data())
-            setDescription(product.data().description)    
-            setStock(product.data().stock)
+            setDescription(product.data().description) // Actualizar la descripción del producto en el estado
+            setStock(product.data().stock) // Actualizar el stock del producto en el estado
         }else{
             console.log('El producto no existe')
         }

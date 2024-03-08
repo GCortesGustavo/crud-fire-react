@@ -22,12 +22,16 @@ const Show = () => {
     )
     //console.log(products)
     }
+
+
     //4 - Funcion para eliminar un doc
     const deleteProduct = async (id) => {
     const productDoc = doc(db, "products", id)
     await deleteDoc(productDoc)
     getProducts()
     }
+
+    
     //5 - Funcion de confirmacion para Sweet Alert 2
     const confirmDelete = (id) => {
         MySwal.fire({
@@ -50,12 +54,12 @@ const Show = () => {
         }
         })    
     }
-    //6 - usamos useEffect
+    
     useEffect( () => {
         getProducts()
         // eslint-disable-next-line
     }, [] )
-    //7 - devolvemos vista de nuestro componente
+    
     return (
         <>
         <div className='container'>

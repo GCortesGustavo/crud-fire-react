@@ -4,20 +4,23 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../firebaseConfig/firebase'
 
 const Create = () => {
-  const [ description, setDescription ] = useState('')
-  const [ stock, setStock ] = useState(0)
-  const navigate = useNavigate()
+    //Estados del componente
+    const [ description, setDescription ] = useState('')
+    const [ stock, setStock ] = useState(0)
+    // Obtener la función de navegación de React Router
+    const navigate = useNavigate()
+    // Crear una referencia a la colección de productos en Firebase
+    const productsCollection = collection(db, "products")
+    
+    // Función para almacenar un nuevo producto en la base de datos
+    const store = async (e) => {
+        e.preventDefault()  // Evitar que el formulario se envíe automáticamente
+        await addDoc( productsCollection, { description: description, stock: stock } )
+        navigate('/') //Dirige a la pagina principal
+        //console.log(e.target[0].value)
+}
 
-  const productsCollection = collection(db, "products")
-
-  const store = async (e) => {
-    e.preventDefault()
-    await addDoc( productsCollection, { description: description, stock: stock } )
-    navigate('/')
-    //console.log(e.target[0].value)
-  }
-
-  return (
+return (
     <div className='container'>
         <div className='row'>
             <div className='col'>
@@ -46,7 +49,7 @@ const Create = () => {
             </div>
         </div>
     </div> 
-  )
+)
 }
 
 export default Create
