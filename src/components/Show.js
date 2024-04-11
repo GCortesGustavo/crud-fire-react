@@ -64,31 +64,31 @@ const Show = () => {
         <>
         <div className='container'>
         <div className='row'>
-            <div className='col'>
-            <div className="d-grid gap-2">
-                <Link to="/create" className='btn btn-secondary mt-2 mb-2'>Crear</Link>    
-            </div>
-            <table className='table table-dark table-hover'>
-                <thead>
-                <tr>
-                    <th>Descripcion</th>
-                    <th>Stock</th>
-                    <th>Accciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                { products.map( (product) => (
-                    <tr key={product.id}>
-                    <td>{product.description}</td>
-                    <td>{product.stock}</td>
-                    <td>
-                        <Link to={`/edit/${product.id}`} className="btn btn-light"><i className="fa-solid fa-pencil"></i></Link>
-                        <button onClick={ () => { confirmDelete(product.id) } } className="btn btn-danger"><i className="fa-solid fa-trash"></i></button>
-                    </td>
-                    </tr>                
-                )) }
-                </tbody>
-            </table>
+            <div className='col'>                
+                <table className='table table-bordered table-hover' style={{ backgroundColor: '#ffebb2' }}>
+                    <thead style={{ color: '#e59be9' }}>
+                    <tr>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    { products.map( (product) => (
+                        <tr key={product.id}>
+                        <td>{product.description}</td>
+                        <td>{product.stock}</td>
+                        <td>
+                            <Link to={`/edit/${product.id}`} className="btn btn-light me-2"><i className="fa-solid fa-pencil"></i></Link>
+                            <button onClick={ () => { confirmDelete(product.id) } } className="btn btn-danger"><i className="fa-solid fa-trash"></i></button>
+                        </td>
+                        </tr>                
+                    )) }
+                    </tbody>
+                </table>
+                <div className="d-grid gap-2">
+                    <Link to="/create" className='btn btn-secondary mt-2 mb-2' style={{ backgroundColor: '#d862bc' }}>Crear nuevo Producto</Link>    
+                </div>
             </div>
         </div>
         </div>

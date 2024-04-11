@@ -21,35 +21,35 @@ const Create = () => {
 }
 
 return (
-    <div className='container'>
-        <div className='row'>
-            <div className='col'>
-                <h1>Crear Producto</h1>
-                <form onSubmit={store}>
-                    <div className='mb-3'>
-                        <label className='form-label'>Descripción</label>
-                        <input
-                            value={description}
-                            onChange={ (e) => setDescription(e.target.value)} 
-                            type="text"
-                            className='form-control'
-                        />
-                    </div>  
-                    <div className='mb-3'>
-                        <label className='form-label'>Stock</label>
-                        <input
-                            value={stock}
-                            onChange={ (e)=> setStock(e.target.value)} 
-                            type="number"
-                            className='form-control'
-                        />                 
-                    </div>  
-                    <button type='submit' className='btn btn-primary'>Guardar</button>
-                </form>   
+            <div className="container" style={{ backgroundColor: '#ffebb2', padding: '20px', borderRadius: '10px' }}> 
+            <div className="row">
+                <div className="col">
+                    <h1 style={{ color: '#d862bc' }}>Crear Producto</h1> 
+                    <form onSubmit={store}>
+                        <div className="mb-3">
+                            <label className="form-label" style={{ color: '#e59be9' }}>Descripción</label> 
+                            <input
+                                value={description}
+                                onChange={e => setDescription(e.target.value)}
+                                type="text"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label" style={{ color: '#8644a2' }}>Stock</label> 
+                            <input
+                                value={stock}
+                                onChange={e => setStock(e.target.value)}
+                                type="number"
+                                className="form-control"
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#d862bc', borderColor: '#d862bc' }}>Guardar</button> 
+                    </form>
+                </div>
             </div>
         </div>
-    </div> 
-)
+    )
 }
 
 export default Create
