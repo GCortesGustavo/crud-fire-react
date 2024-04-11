@@ -36,7 +36,7 @@ const Show = () => {
     const confirmDelete = (id) => {
         MySwal.fire({
         title: '¿Elimina el producto?',
-        text: "You won't be able to revert this!",
+        text: "Segura? No se va a poder revertir la eleccion :/",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',
@@ -66,14 +66,14 @@ const Show = () => {
         <div className='row'>
             <div className='col'>
             <div className="d-grid gap-2">
-                <Link to="/create" className='btn btn-secondary mt-2 mb-2'>Create</Link>    
+                <Link to="/create" className='btn btn-secondary mt-2 mb-2'>Crear</Link>    
             </div>
             <table className='table table-dark table-hover'>
                 <thead>
                 <tr>
-                    <th>Description</th>
+                    <th>Descripcion</th>
                     <th>Stock</th>
-                    <th>Actions</th>
+                    <th>Accciones</th>
                 </tr>
                 </thead>
                 <tbody>

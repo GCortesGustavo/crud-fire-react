@@ -42,10 +42,10 @@ const Edit = () => {
         <div className='container'>
         <div className='row'>
             <div className='col'>
-                <h1>Edit Product</h1>
+                <h1>Editar Producto</h1>
                 <form onSubmit={update}>
                     <div className='mb-3'>
-                        <label className='form-label'>Description</label>
+                        <label className='form-label'>Descripcion</label>
                         <input
                             value={description}
                             onChange={ (e) => setDescription(e.target.value)} 
@@ -63,7 +63,7 @@ const Edit = () => {
                             className='form-control'
                         />                 
                     </div>  
-                    <button type='submit' className='btn btn-primary'>Update</button>
+                    <button type='submit' className='btn btn-primary'>Actualizar</button>
                 </form>   
             </div>
         </div>

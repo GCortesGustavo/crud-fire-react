@@ -24,10 +24,10 @@ return (
     <div className='container'>
         <div className='row'>
             <div className='col'>
-                <h1>Create Product</h1>
+                <h1>Crear Producto</h1>
                 <form onSubmit={store}>
                     <div className='mb-3'>
-                        <label className='form-label'>Description</label>
+                        <label className='form-label'>Descripción</label>
                         <input
                             value={description}
                             onChange={ (e) => setDescription(e.target.value)} 
@@ -44,7 +44,7 @@ return (
                             className='form-control'
                         />                 
                     </div>  
-                    <button type='submit' className='btn btn-primary'>Store</button>
+                    <button type='submit' className='btn btn-primary'>Guardar</button>
                 </form>   
             </div>
         </div>
